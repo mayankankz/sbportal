@@ -1,0 +1,12 @@
+.studentContainer{
+    flex: 6;
+    padding: 25px;
+    .selectContainer{
+        display: flex;
+        gap: 20px;
+        
+        .dropdown{
+            width: 250px
+        }
+    }
+}

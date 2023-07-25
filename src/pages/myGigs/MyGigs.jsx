@@ -13,10 +13,10 @@ function MyGigs() {
     <div className="myGigs">
       <div className="container">
         <div className="title">
-          <h1>{currentUser.isSeller ? "Gigs" : "Orders"}</h1>
+          <h1>{currentUser.isSeller ? "Products" : "Orders"}</h1>
           {currentUser.isSeller && (
             <Link to="/add">
-              <button>Add New Gig</button>
+              <button>Add New Product</button>
             </Link>
           )}
         </div>
@@ -36,7 +36,7 @@ function MyGigs() {
                 alt=""
               />
             </td>
-            <td>Stunning concept art</td>
+            <td>ID Cards</td>
             <td>59.<sup>99</sup></td>
             <td>13</td>
             <td>
@@ -51,7 +51,7 @@ function MyGigs() {
                 alt=""
               />
             </td>
-            <td>Ai generated concept art</td>
+            <td>Visiting Cards</td>
             <td>120.<sup>99</sup></td>
             <td>41</td>
             <td>
@@ -66,7 +66,7 @@ function MyGigs() {
                 alt=""
               />
             </td>
-            <td>High quality digital character</td>
+            <td>Clothing and Gifts</td>
             <td>79.<sup>99</sup></td>
             <td>55</td>
             <td>
@@ -81,7 +81,7 @@ function MyGigs() {
                 alt=""
               />
             </td>
-            <td>Illustration hyper realistic painting</td>
+            <td>Notebook and pens</td>
             <td>119.<sup>99</sup></td>
             <td>29</td>
             <td>
@@ -96,7 +96,7 @@ function MyGigs() {
                 alt=""
               />
             </td>
-            <td>Original ai generated digital art</td>
+            <td>Personalized Gifts</td>
             <td>59.<sup>99</sup></td>
             <td>34</td>
             <td>
@@ -104,19 +104,7 @@ function MyGigs() {
             </td>
           </tr>
           <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-            </td>
-            <td>Text based ai generated art</td>
-            <td>110.<sup>99</sup></td>
-            <td>16</td>
-            <td>
-              <img className="delete" src="./img/delete.png" alt="" />
-            </td>
+            
           </tr>
         </table>
       </div>

@@ -1,0 +1,35 @@
+.sidebar {
+
+  flex: 1;
+  border-right: 1px dotted gray;
+  height: calc(100vh - 95px);
+  box-shadow: rgba(136, 165, 191, 0.30) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .title {
+      font-size: 12px;
+      font-weight: 500;
+      color: black;
+      margin-left: 10px;
+      text-transform: uppercase;
+      align-items: center;
+
+    }
+    .listItem {
+      display: flex;
+      align-items: center;
+      width: 90%;
+      padding: 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      &:hover {
+        background-color: GREEN;
+        color: #fff;
+      }
+
+    }
+  }
+}

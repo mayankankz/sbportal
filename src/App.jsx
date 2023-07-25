@@ -13,6 +13,11 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import AdminHome from "./pages/adminhome/AdminHome";
+import AdminNavbar from "./components/adminNavbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Schools from "./pages/AdminPages/Schools/Schools";
+import StudentData from "./pages/AdminPages/StudentData/StudentData";
 
 function App() {
   const Layout = () => {
@@ -21,6 +26,22 @@ function App() {
         <Navbar />
         <Outlet />
         <Footer />
+      </div>
+    );
+  };
+
+  const AdminLayout = () => {
+    return (
+      <div className="app" >
+        <AdminNavbar />
+       
+      <div style={{display: 'flex' , flexwrap: 'wrap'}}>
+      <Sidebar />
+      <Outlet />
+      </div>
+      
+      
+        
       </div>
     );
   };
@@ -61,8 +82,26 @@ function App() {
         {
           path: "/gig/:id",
           element: <Gig />,
-        },
+        }
       ],
+    },
+    {
+      path: "/admin",
+      element: <AdminLayout />,
+      children: [
+        {
+          path: "adminscreen",
+          element: <AdminHome />
+        },
+        {
+          path: "schools",
+          element: <Schools />
+        },
+        {
+          path: "studentdata",
+          element: <StudentData />
+        }
+      ]
     },
     {
       path: "/register",
@@ -72,7 +111,9 @@ function App() {
       path: "/login",
       element: <Login />,
     },
-  ]);
+  ],{
+    basename: '/sbprint'
+  });
 
   return <RouterProvider router={router} />;
 }

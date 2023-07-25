@@ -101,72 +101,136 @@ export const gigs = [
     id: 1,
     img: "https://images.pexels.com/photos/580151/pexels-photo-580151.jpeg?auto=compress&cs=tinysrgb&w=1600",
     pp: "https://images.pexels.com/photos/720598/pexels-photo-720598.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will create ai art character from your images and prompts",
+    desc: "Example Description",
     price: 59,
     star: 5,
-    username: "Anna Bell",
+    username: "Glossy Cards",
   },
   {
     id: 2,
     img: "https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1600",
     pp: "https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will create ultra high quality character art with ai",
+    desc: "Example Description",
     price: 79,
     star: 5,
-    username: "Lannie Coleman",
+    username: "Standard",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/8797307/pexels-photo-8797307.jpeg?auto=compress&cs=tinysrgb&w=1600",
     pp: "https://images.pexels.com/photos/1062280/pexels-photo-1062280.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will creating unique ai generated artworks mid journey ai artist",
+    desc: "Classic",
     price: 112,
     star: 5,
-    username: "Carol Steve",
+    username: "Rounded Corners",
   },
   {
     id: 4,
     img: "https://images.pexels.com/photos/5708069/pexels-photo-5708069.jpeg?auto=compress&cs=tinysrgb&w=1600",
     pp: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will create custom ai generated artwork using your photos",
+    desc: "Example Description",
     price: 99,
     star: 4,
-    username: "Don Weber",
+    username: "Bar code",
   },
   {
     id: 5,
     img: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=1600",
     pp: "https://images.pexels.com/photos/1771383/pexels-photo-1771383.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will recreate your dreams in high quality pictures",
+    desc: "Example Descriptions",
     price: 59,
     star: 5,
-    username: "Audrey Richards",
+    username: "Premium Plus Glossy",
   },
   {
     id: 6,
     img: "https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1600",
     pp: "https://images.pexels.com/photos/715546/pexels-photo-715546.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will create ai digital art illustration hyper realistic painting",
+    desc: "Example Description",
     price: 79,
     star: 4,
-    username: "Walton Shepard ",
+    username: "Premium White ",
   },
-  {
-    id: 7,
-    img: "https://images.pexels.com/photos/6039245/pexels-photo-6039245.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    pp: "https://images.pexels.com/photos/720606/pexels-photo-720606.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will generate images with your prompts using ai dalle",
-    price: 89,
-    star: 5,
-    username: "Waverly Schaefer",
-  },
-  {
-    id: 8,
-    img: "https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    pp: "https://images.pexels.com/photos/1699159/pexels-photo-1699159.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    desc: "I will create custom art using midjourney generator",
-    price: 110,
-    star: 4,
-    username: "Wilton Hunt",
-  },
+  
 ];
+
+
+export const menu = [
+  {
+    id: 1,
+    title: "main",
+    listItems: [
+      {
+        id: 1,
+        title: "Home",
+        url: "/admin/adminscreen",
+        icon: "home.svg",
+      }
+    ],
+  },
+  {
+    id: 2,
+    title: "School",
+    listItems: [
+      {
+        id: 1,
+        title: "All Schools",
+        url: "/admin/adminscreen",
+        icon: "home.svg",
+      },
+      {
+        id: 2,
+        title: "Create School",
+        url: "/admin/schools",
+        icon: "product.svg",
+      },
+      {
+        id: 3,
+        title: "Student Data",
+        url: "/admin/studentdata",
+        icon: "order.svg",
+      }
+    ],
+  },
+  {
+    id: 3,
+    title: "Design & Print",
+    listItems: [
+      {
+        id: 1,
+        title: "Design And Print",
+        url: "/admin/adminscreen",
+        icon: "home.svg",
+      }
+    ],
+  }
+];
+
+
+export const schoolcolumns = [
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "name", headerName: "Name", width: 150 },
+  { field: "age", headerName: "Age", type: "number", width: 90 },
+  // Add more columns as needed
+];
+
+export const schoolrows = [
+  { id: 1, name: "John Doe", age: 28 },
+  { id: 2, name: "Jane Smith", age: 34 },
+  // Add more rows as needed
+];
+
+export const classes = [
+  {label: "class 1" , value: "1"},
+  {label: "class 2" , value: "2"},
+  {label: "class 3" , value: "3"},
+  {label: "class 4" , value: "4"},
+  {label: "class 5" , value: "5"},
+  {label: "class 6" , value: "6"},
+  {label: "class 7" , value: "7"},
+  {label: "class 8" , value: "8"},
+  {label: "class 9" , value: "9"},
+  {label: "class 10" , value: "10"},
+  {label: "class 11" , value: "11"},
+  {label: "class 12" , value: "12"}
+]

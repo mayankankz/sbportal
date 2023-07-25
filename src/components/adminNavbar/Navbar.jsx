@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Navbar.scss";
+import "../navbar/Navbar.scss";
 
-function Navbar() {
+function AdminNavbar() {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -81,32 +81,9 @@ function Navbar() {
           )}
         </div>
       </div>
-      {(active || pathname !== "/") && (
-        <>
-          <hr />
-          <div className="menu">
-            <Link className="link menuLink" to="/">
-              All Products
-            </Link>
-            <Link className="link menuLink" to="/">
-              Visiting Cards
-            </Link>
-            <Link className="link menuLink" to="/">
-            Banners, Posters & Signs
-            </Link>
-            <Link className="link menuLink" to="/">
-            Clothing And Bags
-            </Link>
-            <Link className="link menuLink" to="/">
-             Mugs And Gifts
-            </Link>
-           
-          </div>
-          <hr />
-        </>
-      )}
+      <hr />
     </div>
   );
 }
 
-export default Navbar;
+export default AdminNavbar;
