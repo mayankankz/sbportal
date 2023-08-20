@@ -16,6 +16,7 @@ import { Alert } from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { BASEPATH } from '../../config';
 
 function Copyright(props) {
   return (
@@ -54,7 +55,7 @@ export default function Login() {
 
     try {
       setLoading(true)
-      const user = await axios.post(`http://localhost:5000/auth/login`, { username, password }).then(response => {
+      const user = await axios.post(`${BASEPATH}auth/login`, { username, password }).then(response => {
         console.log(response.data.userDetails.isAdmin);
 
         if (response.data.userDetails.isAdmin) {

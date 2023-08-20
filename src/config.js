@@ -1,1 +1,1 @@
-export const BASEPATH = 'http://nivyam.com:5001/'
+export const BASEPATH = 'http://localhost:5000/'

@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { BASEPATH } from '../../../config';
 import { Button } from '@mui/material';
+import Loader from '../../../components/loader/Loader';
 
 function Schools() {
   const [schools, setSchools] = useState([])
@@ -59,11 +60,14 @@ function Schools() {
     },
   };
 
+  if(loading){
+    return <Loader />
+  }
+    
+
   return (
     <div className="schoolsContainer">
-
-      <h2 style={{marginBottom: 20}}>Schools Data</h2>
-      {schools.length ? <DataGridTable actionColumn={actionColumn} data={schools} /> : 'No Record Found'}
+    {schools.length ? <DataGridTable actionColumn={actionColumn} data={schools} Title={'Create New School'} /> : 'No Record Found'}
     </div>
   )
 }

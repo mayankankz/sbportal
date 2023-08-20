@@ -221,16 +221,64 @@ export const schoolrows = [
 ];
 
 export const classes = [
-  {label: "class 1" , value: "1"},
-  {label: "class 2" , value: "2"},
-  {label: "class 3" , value: "3"},
-  {label: "class 4" , value: "4"},
-  {label: "class 5" , value: "5"},
-  {label: "class 6" , value: "6"},
-  {label: "class 7" , value: "7"},
-  {label: "class 8" , value: "8"},
-  {label: "class 9" , value: "9"},
-  {label: "class 10" , value: "10"},
-  {label: "class 11" , value: "11"},
-  {label: "class 12" , value: "12"}
+  { label: 'Nursery', value: 'Nursery' },
+    { label: 'KG 1', value: 'KG 1' },
+    { label: 'KG 2', value: 'KG 2' },
+    { label: 'class 1', value: '1' },
+    { label: 'class 2', value: '2' },
+    { label: 'class 3', value: '3' },
+    { label: 'class 4', value: '4' },
+    { label: 'class 5', value: '5' },
+    { label: 'class 6', value: '6' },
+    { label: 'class 7', value: '7' },
+    { label: 'class 8', value: '8' },
+    { label: 'class 9', value: '9' },
+    { label: 'class 10', value: '10' },
+    { label: 'class 11', value: '11' },
+    { label: 'class 12', value: '12' }
 ]
+
+
+export const userInputs = [
+  {
+    id: 1,
+    label: "Username",
+    type: "text",
+    placeholder: "john_doe",
+  },
+  {
+    id: 2,
+    label: "Name and surname",
+    type: "text",
+    placeholder: "John Doe",
+  },
+  {
+    id: 3,
+    label: "Email",
+    type: "mail",
+    placeholder: "john_doe@gmail.com",
+  },
+  {
+    id: 4,
+    label: "Phone",
+    type: "text",
+    placeholder: "+1 234 567 89",
+  },
+  {
+    id: 5,
+    label: "Password",
+    type: "password",
+  },
+  {
+    id: 6,
+    label: "Address",
+    type: "text",
+    placeholder: "Elton St. 216 NewYork",
+  },
+  {
+    id: 7,
+    label: "Country",
+    type: "text",
+    placeholder: "USA",
+  },
+];

@@ -1,0 +1,255 @@
+.previewContainer {
+
+    height: 1123px;
+    width: 794px;
+    position: relative;
+
+
+    .previewHeader {
+        height: 11%;
+        position: relative;
+        display: flex;
+
+        .left {
+            height: 100%;
+            width: 60%;
+            background-color: #000;
+            border-top-right-radius: 75px;
+            border-bottom-right-radius: 75px;
+            position: relative;
+
+            .logoimg {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+
+                img {
+                    height: 60%;
+                    width: 30%;
+                }
+
+                .name {
+                    font-size: 1rem
+                }
+            }
+        }
+
+        .right {
+            position: absolute;
+            height: 50%;
+            width: 70%;
+            right: 0;
+            background-color: #e31616;
+
+            border-bottom-left-radius: 70px;
+
+            .infos {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+
+                .info {
+                    display: flex;
+
+                    gap: 5px;
+
+                    .infoleft {
+                        margin-top: 4px;
+                    }
+
+                    .inforight {
+                        font-size: 10px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .invoiceBasicInfo {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        position: relative;
+
+        .invoiceto {
+            flex: 2;
+            position: absolute;
+            left: 40px;
+            top: 30px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                color: #e31616;
+                font-weight: 500;
+
+            }
+
+
+            .company {
+                font-size: 10px
+            }
+
+            .toInfo {
+                margin-top: 10px;
+
+                .maininfo {
+
+                    font-size: 14px
+                }
+            }
+
+        }
+
+        .invoiceDates {
+            flex: 1;
+            position: absolute;
+            right: 60px;
+            top: -50px;
+
+            p {
+                font-size: 45px;
+                font-weight: 600;
+            }
+
+            .datesinfo {
+                display: flex;
+                flex-direction: column;
+                
+                margin-top: 10px;
+                margin-left: 3px;
+
+                .date {
+                    display: flex;
+                    gap: 5px;
+                    
+                }
+            }
+        }
+    }
+
+    .invoicepreviewbottom {
+        margin-top: 5px;
+        padding: 35px;
+
+        table {
+            thead {
+                background-color: #e31616;
+                color: #fff;
+
+
+            }
+
+            .tableHeaderStyle {
+                padding: 6px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+                
+            }
+
+            .tableDataStyle {
+                padding: 8px;
+                border: 0.3px dotted lightgray;
+                text-align: center;
+            }
+        }
+    }
+
+    .footerinvoice{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+        position: relative;
+        .footerleft{
+            flex: 2;
+
+            p{
+                font-size: 13px;
+                font-weight: 500;
+                color: #e31616;
+                margin-top: 10px;
+            }
+        }
+
+        .footerright{
+            flex: 1;
+            height: 150px;
+            width: 221.2px;
+            position: absolute;
+            top: -26px;
+            right: 0;
+            
+            
+
+            .box{
+                display: flex;
+                justify-content: space-between;
+
+                
+             .totalname{
+                width: 114.5px;
+                padding: 8px;
+                border: 0.3px dotted lightgray;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 500
+
+                
+             }   
+
+             .totalprice{
+                flex: 1;
+                padding: 8px;
+                border: 0.3px dotted lightgray;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 600
+             }
+            }
+            
+        }
+    }
+
+    .mainFooter{
+        height: 15%;
+        width: 100%;
+       
+        position: absolute;
+        bottom: 0;
+
+        .mainfootertop{
+            height: 60%;
+            
+        }
+
+        .mainfooterbottom{
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .redbox{
+                width: 100%;
+                height: 50%;
+                background-color: #e31616;
+                position: absolute;
+                bottom: 0;
+            }
+
+            .blackbox{
+                width: 55%;
+                height: 100%;
+                background-color: #000;
+                position: absolute;
+                border-top-left-radius: 98px;
+                right: 0;
+                z-index: 99;
+            }
+        }
+    }
+}

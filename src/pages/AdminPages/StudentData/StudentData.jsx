@@ -8,15 +8,34 @@ import { BASEPATH } from '../../../config'
 import Loader from '../../../components/loader/Loader'
 import { classes, schoolcolumns, schoolrows } from '../../../data'
 import DataGridTable from '../../../components/DatagridTable/DatagridTable'
+import StudentImage from '../../../components/StudentImage/StudentImage'
+import jsPDF from 'jspdf'; // Import jspdf
+import 'jspdf-autotable';
+import { createTheme } from '@mui/material/styles';
 function StudentData() {
   const [schools, setSchools] = useState([])
   const [school, setSchool] = useState('')
   const [classValue, setClassValue] = useState('')
   const [loading, setLoading] = useState(false)
   const [loadingphoto, setLoadingPhoto] = useState(false)
+  const [loadingPdf, setLoadingPdf] = useState(false)
   const [isError, setIsError] = useState(false)
   const [error, setError] = useState('')
   const [studentsData, setStudentsData] = useState([])
+
+
+
+const theme = createTheme({
+  palette: {
+    ochre: {
+      main: '#DA423D',
+      light: '#E9DB5D',
+      dark: '#A29415',
+      contrastText: '#242105',
+    },
+  },
+});
+
 
   async function fetchStudentsData() {
 
@@ -34,6 +53,9 @@ function StudentData() {
       classname: classValue,
       schoolname: school
     }).then((response) => {
+      console.log('====================================');
+      console.log(response.data.students);
+      console.log('====================================');
       setStudentsData(() => response.data.students)
       setLoading(false);
     }).catch((error) => {
@@ -43,7 +65,7 @@ function StudentData() {
   }
 
   async function fetchStudentsPhoto() {
-
+debugger
     if (!school.trim() || !classValue.trim()) {
       setIsError(true);
       setError('Please select schoola and class.')
@@ -102,9 +124,92 @@ function StudentData() {
     fetchSchools()
   }, [])
 
-  if (loading) {
-    return <Loader />
-  }
+  
+
+
+  const actionColumn = {
+    field: "Image",
+    headerName: "Image",
+    flex: 1,
+    renderCell: (params) => {
+      return (
+        <StudentImage id={params.row.id} />
+      );
+    },
+  };
+
+  
+
+
+  // async function generatePDF() {
+  //   debugger
+  //   if (!school.trim() || !classValue.trim()) {
+  //     setIsError(true);
+  //     setError('Please select school and class.');
+  //     setTimeout(() => {
+  //       setIsError(false);
+  //       setError('');
+  //     }, 1000);
+  //     return;
+  //   }
+
+  //   const doc = new jsPDF();
+  //   const imagePromises = []; // Array to store promises for fetching image URLs
+
+  //   setLoadingPdf(true);
+
+  //   // Fetch image URLs for each student and store the promises
+  //   studentsData.forEach(async(student) => {
+  //     debugger
+  //       await getImage(student.id)
+  //       .then((imageUrl) => {
+  //         student.image = imageUrl; // Store the image URL in the student object
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //         // Handle any errors while fetching image URLs (optional)
+  //       });
+  //   });
+
+
+  //   setLoadingPdf(false);
+
+  //   const columns = studentsData.length > 0 ? Object.keys(studentsData[0]).filter((key) => studentsData[0][key] !== null && studentsData[0][key] !== '').map((key) => key) : [];
+
+  //   const tableData = studentsData.map((student) => {
+  //     debugger
+  //     const rowData = {};
+  //     columns.forEach((col) => {
+  //       rowData[col] = student[col];
+  //     });
+  //     rowData['Image'] = ''; // Empty placeholder for the image column
+  //     return rowData;
+  //   });
+
+  //   doc.autoTable({
+  //     head: [columns], // Table header
+  //     body: tableData,
+  //     startY: 20,
+  //     didDrawPage: function (data) {
+  //       if (data.pageCount === 1) {
+  //         // Add images to the first page of the PDF
+  //         studentsData.forEach((student, index) => {
+  //           const { image } = student;
+  //           if (image) {
+  //             const imgWidth = 40;
+  //             const imgHeight = 40;
+  //             const imgX = 10;
+  //             const imgY = 30 + index * 15;
+  //             doc.addImage(image, 'JPEG', imgX, imgY, imgWidth, imgHeight);
+  //           }
+  //         });
+  //       }
+  //     },
+  //   });
+
+  //   // Save the PDF
+  //   doc.save(`${school}_${classValue}_data.pdf`);
+  // }
   return (
 
     <div className="studentContainer">
@@ -118,22 +223,25 @@ function StudentData() {
           <DropDown label={"Class"} value={classValue} options={classes} onChange={setClassValue} />
         </div>
 
-        <Button variant="contained" color="success" style={{ width: '150px' }} onClick={fetchStudentsData}>
+        <div className="buttongroup">
+        
+        <Button variant="outlined" size="medium" color='error' onClick={fetchStudentsData}>
           Get Data
         </Button>
 
         {
-          loadingphoto ? 'Please Wait' : <Button variant="contained" color="success" style={{ width: '150px' }} onClick={fetchStudentsPhoto}>
+          loadingphoto ? 'Please Wait' : <Button variant="outlined" size="medium" color='error' onClick={fetchStudentsPhoto}>
             Export Photos
           </Button>
         }
 
-
-
+        
+        </div>
 
       </div>
-      <h2 style={{ margin: '10px 10px 10px 0px' }}>Students Data</h2>
-      {studentsData.length ? <DataGridTable data={studentsData} /> : 'No Record Found'}
+      {loading && <Loader />}
+      
+      {studentsData.length ? <DataGridTable data={studentsData} actionColumn={actionColumn} /> : 'No Record Found'}
     </div>
   )
 }

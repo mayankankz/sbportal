@@ -1,0 +1,208 @@
+.invoiceWrapper {
+    display: flex;
+    height: calc(100vh - 60px);
+    
+    gap: 10px;
+    padding: 20px;
+
+    .invoicesection {
+        width: 794px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.90);
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.90);
+
+        .invoicetop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 15vh;
+            border-radius: 12px;
+            background-color: #000;
+
+            .infoContainer {
+                display: flex;
+                align-items: center;
+              
+
+                .logo {
+                    height: 80px;
+                    width: 80px;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                }
+
+               
+            }
+            .address{
+                display: flex;
+                flex-direction: column;
+                span{
+                    color: #fff;
+                    font-size: 15px;
+                    margin-right:8px;
+                }
+            }
+
+            .name {
+                color: #fff;
+                p{
+                    font-size: 12px;
+                    margin-top: 0px
+                }
+            }
+        }
+
+        .invoicecenter{
+            display: flex;
+            height: 20vh;
+            background-color: #f9f9f9;
+            justify-content: space-between;
+            padding: 10px;
+
+            .invoicedetails{
+                flex: 2;
+                
+                .issuedate{
+                    margin-top: 24px;
+                   
+                }
+            }
+
+            .billedto{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items:flex-end;
+
+                .billedtoinfo{
+                    margin-top: 24px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+               
+            }
+
+        }
+
+        .invoicebottom{
+            overflow-y: auto;
+            .invoicefooter{
+                display: flex;
+                margin-top: 15px;
+
+                .left{
+                    flex: 2;
+                }
+
+                .right{
+                    flex: 1;
+
+                    .detailbox{
+                        display: flex;
+                        align-items: center;
+                        justify-content:space-between;
+                        
+                        span{
+                            font-weight: 600;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .actionsection {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.90);
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.90);
+
+        .actionbutton{
+            flex: 1;
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 5px;
+        }
+
+        .basicinfo{
+            flex: 5;
+            width: 100%;
+           
+            padding: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 5px;
+
+            .billinfo{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 10px;
+                
+               
+                justify-content: center;
+                .firstSide{
+                    flex: 1;
+                }
+
+                .secondSide{
+                    flex: 1;
+                }
+
+                .inputBox{
+                    display: flex;
+                    width: 100%;
+                    align-items: flex-start;
+                    
+                    gap: 15px;
+                    flex-direction: column;
+                    label{
+                        font-size: 14px;
+                        color: gray;
+                    }
+
+                    input[type="text"]{
+                        width: 90%;
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: 0.5px solid black;
+                        background-color: #f9f9f9;
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                    }
+
+                    input[type="date"]{
+                        width: 80%;
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: none;
+                        background-color: #f9f9f9;
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.MuiDialogContent-root{
+    display:flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 10px !important;
+}

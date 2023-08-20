@@ -13,11 +13,18 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
-import AdminHome from "./pages/adminhome/AdminHome";
-import AdminNavbar from "./components/adminNavbar/Navbar";
-import Sidebar from "./components/Sidebar/Sidebar";
+import AdminHome from "./pages/AdminPages/adminhome/AdminHome";
+import AdminNavbar from "./components/adminnavbar/Navbar";
 import Schools from "./pages/AdminPages/Schools/Schools";
 import StudentData from "./pages/AdminPages/StudentData/StudentData";
+import AdminSidebar from "./components/adminsidebar/Sidebar";
+import CreateSchool from "./pages/AdminPages/CreateSchool/CreateSchool";
+import { Users } from "./pages/AdminPages/Users/Users";
+import { DesignAndPrint } from "./pages/AdminPages/DesignAndPrint/DesignAndPrint";
+import Dashboard from "./pages/AdminPages/adminhome/AdminHome";
+import { CreateInvoice } from "./pages/CreateInvoice/CreateInvoice";
+import { AllInvoiceList } from "./pages/AdminPages/AllInvoiceList/AllInvoiceList";
+
 
 function App() {
   const Layout = () => {
@@ -33,15 +40,13 @@ function App() {
   const AdminLayout = () => {
     return (
       <div className="app" >
-        <AdminNavbar />
-       
-      <div style={{display: 'flex' , flexwrap: 'wrap'}}>
-      <Sidebar />
-      <Outlet />
-      </div>
-      
-      
-        
+        <div className="adminSidebar">
+          <AdminSidebar />
+          <div className="adminNavbar">
+            <AdminNavbar />
+            <Outlet />
+          </div>
+        </div>
       </div>
     );
   };
@@ -91,15 +96,35 @@ function App() {
       children: [
         {
           path: "adminscreen",
-          element: <AdminHome />
+          element: <Dashboard />
         },
         {
           path: "schools",
           element: <Schools />
         },
         {
+          path: "users",
+          element: <Users />
+        },
+        {
+          path: "createinvoice",
+          element: <CreateInvoice />
+        },
+        {
+          path: "designandprint",
+          element: <DesignAndPrint />
+        },
+        {
+          path: "createschool",
+          element: <CreateSchool title={'Create School'}/>
+        },
+        {
           path: "studentdata",
           element: <StudentData />
+        },
+        {
+          path: "allinvoice",
+          element: <AllInvoiceList />
         }
       ]
     },
@@ -111,9 +136,7 @@ function App() {
       path: "/login",
       element: <Login />,
     },
-  ],{
-    basename: '/sbprint'
-  });
+  ]);
 
   return <RouterProvider router={router} />;
 }
