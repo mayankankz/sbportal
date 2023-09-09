@@ -60,9 +60,11 @@ export default function Login() {
 
         if (response.data.userDetails.isAdmin) {
           setLoading(false);
+          localStorage.setItem('isloggedIn' , 'user');
           navigate('/admin/adminscreen')
         } else {
           setLoading(false);
+          
           navigate('/')
         }
       })

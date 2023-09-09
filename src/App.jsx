@@ -1,5 +1,5 @@
 import "./app.scss";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, Outlet, RouterProvider, useNavigation } from "react-router-dom";
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -24,6 +24,7 @@ import { DesignAndPrint } from "./pages/AdminPages/DesignAndPrint/DesignAndPrint
 import Dashboard from "./pages/AdminPages/adminhome/AdminHome";
 import { CreateInvoice } from "./pages/CreateInvoice/CreateInvoice";
 import { AllInvoiceList } from "./pages/AdminPages/AllInvoiceList/AllInvoiceList";
+import { isLoggedIn } from "./utills/auth";
 
 
 function App() {
@@ -92,11 +93,11 @@ function App() {
     },
     {
       path: "/admin",
-      element: <AdminLayout />,
+      element:<AdminLayout />,
       children: [
         {
           path: "adminscreen",
-          element: <Dashboard />
+          element:<Dashboard />
         },
         {
           path: "schools",

@@ -5,15 +5,20 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const Sidebar = () => {
   //const { dispatch } = useContext(DarkModeContext);
   const {pathname} = useLocation()
-  console.log('====================================');
-  console.log(pathname);
-  console.log('====================================');
+  
+  const navigate = useNavigate()
+
+  function handleLogout(){
+    localStorage.removeItem('isloggedIn');
+    navigate('/login')
+  }
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -82,7 +87,7 @@ const Sidebar = () => {
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
-          <li>
+          <li onClick={handleLogout}>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>

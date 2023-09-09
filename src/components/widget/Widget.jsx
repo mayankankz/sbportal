@@ -6,11 +6,11 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import { CurrencyRupeeOutlined } from "@mui/icons-material";
 
-const Widget = ({ type }) => {
+const Widget = ({ type ,amount }) => {
   let data;
 
   //temporary
-  const amount = 100;
+  // const amount = 100;
   const diff = 20;
 
   switch (type) {
@@ -61,7 +61,7 @@ const Widget = ({ type }) => {
       break;
     case "balance":
       data = {
-        title: "BALANCE",
+        title: "Total Revenue",
         isMoney: true,
         link: "See details",
         icon: (
@@ -89,10 +89,7 @@ const Widget = ({ type }) => {
         <span className="link">{data.link}</span>
       </div>
       <div className="right">
-        <div className="percentage positive">
-          <KeyboardArrowUpIcon />
-          {diff} %
-        </div>
+        
         {data.icon}
       </div>
     </div>

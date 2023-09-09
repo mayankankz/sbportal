@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './StudentData.scss'
 import DropDown from '../../../components/DropDown/DropDown'
-import { Alert, Button } from '@mui/material'
+import { Alert } from '@mui/material';
+import { Button } from 'flowbite-react';
 import { useEffect } from 'react'
 import axios from 'axios'
 import { BASEPATH } from '../../../config'
@@ -12,6 +13,9 @@ import StudentImage from '../../../components/StudentImage/StudentImage'
 import jsPDF from 'jspdf'; // Import jspdf
 import 'jspdf-autotable';
 import { createTheme } from '@mui/material/styles';
+import { toast } from 'react-toastify'
+import {BsCloudDownload} from 'react-icons/bs'
+import {AiOutlineReload} from 'react-icons/ai'
 function StudentData() {
   const [schools, setSchools] = useState([])
   const [school, setSchool] = useState('')
@@ -53,10 +57,19 @@ const theme = createTheme({
       classname: classValue,
       schoolname: school
     }).then((response) => {
-      console.log('====================================');
-      console.log(response.data.students);
-      console.log('====================================');
+    
       setStudentsData(() => response.data.students)
+      if(response.data.students.length){
+        toast.success('Students data fetched successfully.', {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+      
+      if( response.data.students.length === 0){
+        toast.warning('No students found.', {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
       setLoading(false);
     }).catch((error) => {
       console.log(error);
@@ -224,17 +237,34 @@ debugger
         </div>
 
         <div className="buttongroup">
-        
-        <Button variant="outlined" size="medium" color='error' onClick={fetchStudentsData}>
+
+        <Button
+        isProcessing={loading}
+        gradientMonochrome="info"
+        outline
+        color ='light'
+        size="md"
+        onClick={fetchStudentsData}
+      >
+      <AiOutlineReload className="mr-3 h-5 w-4"/>
+        <p>
           Get Data
-        </Button>
+        </p>
+      </Button>
 
-        {
-          loadingphoto ? 'Please Wait' : <Button variant="outlined" size="medium" color='error' onClick={fetchStudentsPhoto}>
-            Export Photos
-          </Button>
-        }
 
+      <Button
+        isProcessing={loadingphoto}
+        outline
+        gradientMonochrome="info"
+        size="md"
+        onClick={fetchStudentsPhoto}
+      >
+      <BsCloudDownload className="mr-3 h-5 w-4" />
+        <p>
+        Export Photos
+        </p>
+      </Button>
         
         </div>
 

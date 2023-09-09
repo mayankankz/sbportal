@@ -20,6 +20,7 @@
       color: green;
       background-color: rgba(0, 128, 0, 0.151);
     }
+
     &.Pending {
       color: goldenrod;
       background-color: rgba(189, 189, 3, 0.103);
@@ -27,7 +28,7 @@
   }
 }
 
-.datatableTitle{
+.datatableTitle {
   height: 30px;
   font-size: 24px;
   color: #000;
@@ -35,12 +36,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+
 }
 
 
-.MuiTableRow-root  {
-  .MuiTableCell-head{
+.MuiTableRow-root {
+  .MuiTableCell-head {
 
     color: #fff !important;
   }
+}
+
+
+.ReactModal__Content {
+  width: 860px !important;
+  left: 23% !important;
+}
+
+.btnclose {
+  padding: 4px;
+  width: 20%;
+  margin-bottom: 8px;
+  background-color: #E33931;
+  color: #fff;
 }

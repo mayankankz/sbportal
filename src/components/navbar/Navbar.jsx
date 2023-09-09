@@ -33,9 +33,9 @@ function Navbar() {
         <div className="logo">
           <img src="/img/1.png" alt="" />
           <Link className="link" to="/">
-            <span className="text">SBPRINT</span>
+            <span className="text"></span>
           </Link>
-          <span className="dot">.</span>
+          
         </div>
         <div className="links">
           <span>Sbprint Business</span>

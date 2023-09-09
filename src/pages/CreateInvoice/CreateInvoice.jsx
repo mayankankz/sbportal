@@ -28,7 +28,7 @@ function generateRandomNumber(min, max) {
 function generateInvoiceNumber() {
     const randomPart = generateRandomNumber(1000, 9999);
     const timestamp = Date.now().toString().slice(-5);
-    return `INV-${randomPart}-${timestamp}`;
+    return `SB-${new Date().getFullYear()}-${randomPart}-${timestamp}`;
 }
 
 export const CreateInvoice = () => {
@@ -477,9 +477,9 @@ export const CreateInvoice = () => {
                         <Button variant="outlined" startIcon={Preview ? <EditIcon /> : <VisibilityOutlined />} onClick={() => setPreview(!Preview)}>
                             {Preview ? 'Edit' : 'Preview'}
                         </Button>
-                        <Button variant="outlined" startIcon={<Print />} onClick={handlePrint}>
+                       {Preview &&  <Button variant="outlined" startIcon={<Print />} onClick={handlePrint}>
                             Print
-                        </Button>
+                        </Button>}
                         <Button variant="outlined" startIcon={<SaveOutlined />} onClick={handleInvoiceSave}>
                             Save
                         </Button>

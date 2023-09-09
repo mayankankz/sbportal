@@ -136,14 +136,18 @@
     .invoicepreviewbottom {
         margin-top: 5px;
         padding: 35px;
+     
 
         table {
+            height: 400px;
+            border: 1px solid #e31616;
             thead {
                 background-color: #e31616;
                 color: #fff;
 
 
             }
+           
 
             .tableHeaderStyle {
                 padding: 6px;
@@ -154,8 +158,9 @@
 
             .tableDataStyle {
                 padding: 8px;
-                border: 0.3px dotted lightgray;
+                border-right: 0.3px dotted #e31616;;
                 text-align: center;
+                height: 50px !important;
             }
         }
     }
@@ -163,8 +168,11 @@
     .footerinvoice{
         display: flex;
         justify-content: space-between;
-        margin-top: 25px;
+       
+        padding: 35px;
         position: relative;
+        top: -50px;
+        
         .footerleft{
             flex: 2;
 
@@ -181,8 +189,9 @@
             height: 150px;
             width: 221.2px;
             position: absolute;
-            top: -26px;
-            right: 0;
+            top: 30px;
+            right: 30px;
+            
             
             
 
@@ -194,9 +203,9 @@
              .totalname{
                 width: 114.5px;
                 padding: 8px;
-                border: 0.3px dotted lightgray;
-                text-align: center;
-                font-size: 12px;
+               
+                text-align: start;
+                font-size: 13px;
                 font-weight: 500
 
                 
@@ -205,8 +214,8 @@
              .totalprice{
                 flex: 1;
                 padding: 8px;
-                border: 0.3px dotted lightgray;
-                text-align: center;
+                
+                text-align: end;
                 font-size: 14px;
                 font-weight: 600
              }
@@ -238,7 +247,7 @@
                 height: 50%;
                 background-color: #e31616;
                 position: absolute;
-                bottom: 0;
+                bottom: -14px;
             }
 
             .blackbox{
